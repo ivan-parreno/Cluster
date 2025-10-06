@@ -1,0 +1,10 @@
+model kmedoids.mod;
+data kmedoids.dat;
+
+# Resolver el modelo
+option solver cplex;  # o cualquier solver que tengas instalado
+solve;
+
+# Mostrar resultados
+display x;
+display y;
