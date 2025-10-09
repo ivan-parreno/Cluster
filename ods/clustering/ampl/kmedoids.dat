@@ -1,0 +1,14 @@
+# Define points
+set I := 1 2 3 4 5;
+
+# Number of clusters
+param k := 2;
+
+# Distances between points and medoids
+param d:
+    1   2   3   4   5 :=
+1   0   2   4   7   3
+2   2   0   5   8   4
+3   4   5   0   2   6
+4   7   8   2   0   5
+5   3   4   6   5   0 ;
