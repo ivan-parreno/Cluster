@@ -1,13 +1,16 @@
 import pandas as pd
 from mst_clustering import MSTClustering
 
-df = pd.read_csv("puntos_mst.csv")
-X = df[['x', 'y']].values
+df_distancias = pd.read_csv("puntos_mst.csv", index_col=0)
+distancias = df_distancias.values
 
-model = MSTClustering(cutoff_scale=1.5, min_cluster_size=2)
+model = MSTClustering(
+    cutoff=1,  # Number of clusters
+    metric="precomputed",  # Matriz de distancias precomputada
+    approximate=False,  # MST exacto
+)
+labels = model.fit_predict(distancias)
 
-labels = model.fit_predict(X)
-df['cluster'] = labels
+resultado = pd.DataFrame({"id": df_distancias.index, "cluster": labels})
 
-print(df.sort_values('cluster'))
-
+print(resultado.sort_values("cluster"))
