@@ -6,8 +6,8 @@ distancias = df_distancias.values
 
 model = MSTClustering(
     cutoff=1,  # Number of clusters
-    metric="precomputed",  # Matriz de distancias precomputada
-    approximate=False,  # MST exacto
+    metric="precomputed",  # Precomputed matrix of distances
+    approximate=False,  # MST exact
 )
 labels = model.fit_predict(distancias)
 

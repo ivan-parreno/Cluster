@@ -1,29 +1,28 @@
-# Conjunto de puntos
+# Set of points
 set I;          # Total points
-set J := I;     # Possible medoids (all points)
 
-# Parámetros
-param d {i in I, j in J};    # Distance from point i to medoid j
-param k >= 0;   # Number of clusters
+# Parameters
+param d {i in I, j in I};    # Distance from point i to medoid j
+param k >= 0;                # Number of clusters
 
 # Variables
-var y{j in J} binary;        # 1 if point j is selected as a medoid
-var x{i in J,j in J} binary;      # 1 if point i is assigned to medoid j
+var y{j in I} binary;        # 1 if point j is selected as a medoid, else 0
+var x{i in I, j in I} binary;# 1 if point i is assigned to medoid j, else 0
 
-# Función objetivo: minimizar la suma de distancias
+# Objective function: minimize the sum of distances
 minimize clustering:
-    sum {i in I, j in J} x[i,j] * d[i,j];
+    sum {i in I, j in I} x[i,j] * d[i,j];
 
-# Restricciones
+# Constraints
 
-# Cada punto se asigna a exactamente un medoid
+# Each point must be assigned to exactly one medoid
 subject to OneAssignment {i in I}:
-    sum {j in J} x[i,j] = 1;
+    sum {j in I} x[i,j] = 1;
 
-# Exactamente k medoids
+# Exactly k medoids
 subject to Kclusters:
-    sum {j in J} y[j] = k;
+    sum {j in I} y[j] = k;
 
-# Un punto solo puede asignarse a un medoid activo
-subject to ClusterExists {i in I, j in J}:
+# A point can only be assigned to an active medoid
+subject to ClusterExists {i in I, j in I}:
     x[i,j] <= y[j];
