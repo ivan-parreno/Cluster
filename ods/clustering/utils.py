@@ -24,3 +24,44 @@ def show_confusion_matrix(cm: pd.DataFrame, title: str, ax: plt.Axes | None = No
     ax.set_title(title)
     ax.set_ylabel("True Species")
     ax.set_xlabel("Predicted Species")
+
+
+def scatter_comparison(
+    df: pd.DataFrame,
+    original_column: str,
+    predicted_column: str,
+    predicted_bivariate_column: str,
+    title: str,
+) -> None:
+    fig, ax = plt.subplots(nrows=1, ncols=3, figsize=(15, 5))
+
+    sns.scatterplot(
+        ax=ax[0], data=df, x="flipper_length_mm", y="bill_length_mm", hue=original_column, palette="Set2", s=80
+    )
+    sns.scatterplot(
+        ax=ax[1], data=df, x="flipper_length_mm", y="bill_length_mm", hue=predicted_column, palette="Set2", s=80
+    )
+    sns.scatterplot(
+        ax=ax[2],
+        data=df,
+        x="flipper_length_mm",
+        y="bill_length_mm",
+        hue=predicted_bivariate_column,
+        palette="Set2",
+        s=80,
+    )
+
+    ax[0].set_xlabel("Flipper Length (mm)")
+    ax[0].set_ylabel("Bill Length (mm)")
+    ax[0].set_title("Original Species")
+    ax[0].legend(title="Species")
+
+    ax[1].set_xlabel("Flipper Length (mm)")
+    ax[1].set_ylabel("Bill Length (mm)")
+    ax[1].set_title(f"{title} Clustering")
+    ax[1].legend(title="Species")
+
+    ax[2].set_xlabel("Flipper Length (mm)")
+    ax[2].set_ylabel("Bill Length (mm)")
+    ax[2].set_title(f"{title} Clustering (BiVariate)")
+    ax[2].legend(title="Species")
