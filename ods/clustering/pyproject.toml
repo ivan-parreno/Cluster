@@ -5,6 +5,7 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
+    "amplpy>=0.15.2",
     "jupyter>=1.1.1",
     "kmedoids>=0.5.3.1",
     "mst-clustering>=1.0",

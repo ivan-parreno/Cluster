@@ -8,6 +8,44 @@ resolution-markers = [
 ]
 
 [[package]]
+name = "amplpy"
+version = "0.15.2"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "ampltools" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/f3/ca/20d8319f8c157676dbbd96c00732097d06f2c893c5715ff4c10d21ad4572/amplpy-0.15.2.tar.gz", hash = "sha256:9efb4861545e012fa7caf71dea1c6d0af255f1300707970d032e14e6d1840293", size = 1677032, upload-time = "2025-07-09T16:15:43.949Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/24/2d/03370cbb66aac02e67762deac52ca5e3638eec403fe62a6a4c431f89c77e/amplpy-0.15.2-cp311-cp311-macosx_10_9_universal2.whl", hash = "sha256:9da898bea4c0a934cc689f6f6e89723af5c70176ab0ad16b5b925856e9b483a0", size = 1105211, upload-time = "2025-07-09T16:15:02.259Z" },
+    { url = "https://files.pythonhosted.org/packages/80/4f/e6b39d551f77926adac0ba9699d3e81b6d8eadd753e9d362ffccc2d3c21d/amplpy-0.15.2-cp311-cp311-macosx_10_9_x86_64.whl", hash = "sha256:b49de227b6cf14fc483262429345b536d1f8607e6d9343173bbdd8b6fee97fde", size = 837219, upload-time = "2025-07-09T16:15:03.85Z" },
+    { url = "https://files.pythonhosted.org/packages/ba/ae/ec6dd1bac444caa7c12c54cb8f3cca6f951c66b7cf919b2f632b67b90105/amplpy-0.15.2-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:3263dccd5922e6b556b88ade8871d5d2ef10898084005fe2770b0d03ea01d944", size = 2307992, upload-time = "2025-07-09T16:15:05.507Z" },
+    { url = "https://files.pythonhosted.org/packages/4f/68/773bc89f727461035e67e6d4292e87081fd51eadb3b685f8a1a84d8fedaf/amplpy-0.15.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:f17b3accc489e1666d2bdc16a6bbfd4a79dc9f3525916bc3744c5ad053fec18a", size = 2320223, upload-time = "2025-07-09T16:15:07.236Z" },
+    { url = "https://files.pythonhosted.org/packages/47/c0/e8cfe0e5bf24ab582284fe34b9fa9ecb07167ce96408cf0b7584ceb4e54d/amplpy-0.15.2-cp311-cp311-win_amd64.whl", hash = "sha256:1fdf2eddba0c6bb4a8fd37741254499999b840e7b3b5c3f7b9961164eda228ed", size = 1533008, upload-time = "2025-07-09T16:15:08.877Z" },
+    { url = "https://files.pythonhosted.org/packages/29/b1/96872f91959886d14a06b8f2b8bbfdbebb6485f6896336ac966ec8276fb4/amplpy-0.15.2-cp312-cp312-macosx_10_13_universal2.whl", hash = "sha256:02ab01f1bde7ed4a591b320eb464c7b03ce81b9e4dc4525107e01ffaa706589c", size = 1089281, upload-time = "2025-07-09T16:15:10.663Z" },
+    { url = "https://files.pythonhosted.org/packages/14/9b/20efc4c8952bd33ace680b8082fc95c9301162af7810635e33a691e1e311/amplpy-0.15.2-cp312-cp312-macosx_10_13_x86_64.whl", hash = "sha256:64024e6f6408a5eb02a0330a50f09acd29ad4430a6082c1e5b864d98c49830a1", size = 831841, upload-time = "2025-07-09T16:15:12.969Z" },
+    { url = "https://files.pythonhosted.org/packages/92/fc/d24f0513515527ac0f8988e903677e54bad1eaea3d7bc9417048e34e996c/amplpy-0.15.2-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:c32d19f3a2111ae5f8c2c0f5931c3d19e28fcc356c21056732490fec6916e3e6", size = 2247493, upload-time = "2025-07-09T16:15:14.629Z" },
+    { url = "https://files.pythonhosted.org/packages/1f/e3/673323ecd7cb6d2200d234b9b694fc604360a749afbfd6a24ba3732098bc/amplpy-0.15.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:aef1066b58a517b986caf7dc740fcd587a75fc0d4eca9e474007c323c8258ca4", size = 2281147, upload-time = "2025-07-09T16:15:16.217Z" },
+    { url = "https://files.pythonhosted.org/packages/47/5e/092a4cd36138de0211f244806cd66d3e838a48a7795ea1ba71918219b668/amplpy-0.15.2-cp312-cp312-win_amd64.whl", hash = "sha256:2d9f84fa8e10b6163589f575d2c67cbe1d19ac1e98aa81be7bb5b90b6c55d929", size = 1520968, upload-time = "2025-07-09T16:15:17.962Z" },
+    { url = "https://files.pythonhosted.org/packages/fe/57/dd6043ce91f4137a6af32e168fa2897b321925ae46ae3a318956e8b2535f/amplpy-0.15.2-cp313-cp313-macosx_10_13_universal2.whl", hash = "sha256:a71ef66a10363ea8f1a1de2698c8b017d5524de29800631ba88cc039a98c7d52", size = 1085437, upload-time = "2025-07-09T16:15:19.323Z" },
+    { url = "https://files.pythonhosted.org/packages/be/c7/bff6235d2cfa8ba55a40566a3c5239772d276daa476b8e045b3b00aebf25/amplpy-0.15.2-cp313-cp313-macosx_10_13_x86_64.whl", hash = "sha256:fa2727ead72e4161acce4d1573b28cee098af298fe9bb074315810ac9bbd7770", size = 829913, upload-time = "2025-07-09T16:15:21.279Z" },
+    { url = "https://files.pythonhosted.org/packages/21/ff/930302da89a163edf63c1519f9142d0e39f70bed04d3884b195bc1ab7298/amplpy-0.15.2-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:460ee67b2db2134fda8db8b84a03c61c4af4b7e8e09971465fac79e656a1f989", size = 2244156, upload-time = "2025-07-09T16:15:23.604Z" },
+    { url = "https://files.pythonhosted.org/packages/dc/2b/6ecc4504ebec8608769cd3ec5cb8dd0459968539a251fe1bcbe24b914928/amplpy-0.15.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:fed338a6f9f5392b3433c12858f825207e6cf990f035536efb6d03e0679d95f8", size = 2274012, upload-time = "2025-07-09T16:15:25.297Z" },
+    { url = "https://files.pythonhosted.org/packages/6e/41/a407cf1902e2cf6f006d85a0624ea0da2b3241d8cb86fbaeaead03ef2d6f/amplpy-0.15.2-cp313-cp313-win_amd64.whl", hash = "sha256:8b33fbe6bad6054fc2de27f09a6a7d3842649e0fd9f8a8198d92c62186ce6921", size = 1522171, upload-time = "2025-07-09T16:15:27.079Z" },
+]
+
+[[package]]
+name = "ampltools"
+version = "0.7.5"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "requests" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/64/d4/6ca9f6f6ab52197ef56fbf744cda5a779e38dd3954cd62bf974f3c4453ab/ampltools-0.7.5.tar.gz", hash = "sha256:df43fffd2d263a24fc95297bc56a62a6ab18248f86496b46eba2998fd1431af3", size = 15686, upload-time = "2024-02-27T11:35:36.679Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/29/cc/55c53175d3e4f1e199bef750f14cedad9f7a3f1fe39fb9a4ab824bed2cdc/ampltools-0.7.5-py3-none-any.whl", hash = "sha256:4998eca8343274cf405d006f9182f180e8b115fc7c761e5c0e0813ac8a6640a0", size = 18220, upload-time = "2024-02-27T11:35:34.297Z" },
+]
+
+[[package]]
 name = "anyio"
 version = "4.11.0"
 source = { registry = "https://pypi.org/simple" }
@@ -289,6 +327,7 @@ name = "clustering"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
+    { name = "amplpy" },
     { name = "jupyter" },
     { name = "kmedoids" },
     { name = "mst-clustering" },
@@ -303,6 +342,7 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
+    { name = "amplpy", specifier = ">=0.15.2" },
     { name = "jupyter", specifier = ">=1.1.1" },
     { name = "kmedoids", specifier = ">=0.5.3.1" },
     { name = "mst-clustering", specifier = ">=1.0" },

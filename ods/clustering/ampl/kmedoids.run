@@ -1,0 +1,11 @@
+# Load model and data
+model kmedoids.mod;
+data kmedoids.dat;
+
+# Solve the model
+option solver cplex;
+solve;
+
+# Show results
+display x;
+display y;
