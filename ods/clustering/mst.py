@@ -6,7 +6,7 @@ def run_mst_clustering(data: pd.DataFrame, cutoff: int, approximate=False):
     model = MSTClustering(
         cutoff=cutoff,
         metric="euclidean",
-        approximate=False,
+        approximate=approximate,
     )
 
     labels = model.fit_predict(data.values)

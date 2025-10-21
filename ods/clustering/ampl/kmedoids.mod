@@ -3,10 +3,9 @@ set I;          # Total points
 
 # Parameters
 param d {i in I, j in I};    # Distance from point i to medoid j
-param k >= 0;                # Number of clusters
+param k > 0;                # Number of clusters
 
 # Variables
-var y{j in I} binary;        # 1 if point j is selected as a medoid, else 0
 var x{i in I, j in I} binary;# 1 if point i is assigned to medoid j, else 0
 
 # Objective function: minimize the sum of distances
@@ -21,8 +20,8 @@ subject to OneAssignment {i in I}:
 
 # Exactly k medoids
 subject to Kclusters:
-    sum {j in I} y[j] = k;
+    sum {j in I} x[j,j] = k;
 
 # A point can only be assigned to an active medoid
 subject to ClusterExists {i in I, j in I}:
-    x[i,j] <= y[j];
+    x[i,j] <= x[j,j];
