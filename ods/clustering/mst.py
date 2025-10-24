@@ -89,8 +89,7 @@ def run_mst_clustering_heuristic(
             pass
 
     removed_indices = sorted(set(removed_indices))
-    final_df = data.loc[[i for i in original_index if i not in removed_indices]].copy()
 
     labels_series = pd.Series(labels_full, index=original_index, name="label")
 
-    return labels_series, removed_indices, final_df, current_cutoff, it
+    return labels_series
