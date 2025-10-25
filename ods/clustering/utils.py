@@ -20,7 +20,7 @@ def align_with_species(df: pd.DataFrame, columns: list[str]) -> None:
         true = df.loc[valid_mask, "species"].cat.codes
         pred = df.loc[valid_mask, column]
         cm = confusion_matrix(true, pred)
-        row_ind, col_ind = linear_sum_assignment(-cm)  
+        row_ind, col_ind = linear_sum_assignment(-cm)
         mapping = {old: new for old, new in zip(col_ind, row_ind)}
 
         df[column] = df[column].map(lambda x: mapping.get(x, -1))
@@ -55,8 +55,10 @@ def scatter_comparison(
         hue=predicted_column,
         palette="Set2",
         s=80,
-        style=["Correct" if correct else "Wrong" for correct in (df[predicted_column] == df[original_column].cat.codes)],
-        markers={"Correct": "o", "Wrong": "X"}
+        style=[
+            "Correct" if correct else "Wrong" for correct in (df[predicted_column] == df[original_column].cat.codes)
+        ],
+        markers={"Correct": "o", "Wrong": "X"},
     )
     sns.scatterplot(
         ax=ax[2],
@@ -66,8 +68,11 @@ def scatter_comparison(
         hue=predicted_scaled_column,
         palette="Set2",
         s=80,
-        style=["Correct" if correct else "Wrong" for correct in (df[predicted_scaled_column] == df[original_column].cat.codes)],
-        markers={"Correct": "o", "Wrong": "X"}
+        style=[
+            "Correct" if correct else "Wrong"
+            for correct in (df[predicted_scaled_column] == df[original_column].cat.codes)
+        ],
+        markers={"Correct": "o", "Wrong": "X"},
     )
     sns.scatterplot(
         ax=ax[3],
@@ -77,8 +82,11 @@ def scatter_comparison(
         hue=predicted_bivariate_column,
         palette="Set2",
         s=80,
-        style=["Correct" if correct else "Wrong" for correct in (df[predicted_bivariate_column] == df[original_column].cat.codes)],
-        markers={"Correct": "o", "Wrong": "X"}
+        style=[
+            "Correct" if correct else "Wrong"
+            for correct in (df[predicted_bivariate_column] == df[original_column].cat.codes)
+        ],
+        markers={"Correct": "o", "Wrong": "X"},
     )
 
     ax[0].set_xlabel("Flipper Length (mm)")
@@ -103,6 +111,7 @@ def scatter_comparison(
 
     return fig
 
+
 def _penguin_generator_species(original_penguins: pd.DataFrame, num_penguins: int) -> pd.DataFrame:
     synthetic = pd.DataFrame()
     for col in original_penguins.columns:
@@ -110,7 +119,6 @@ def _penguin_generator_species(original_penguins: pd.DataFrame, num_penguins: in
             probs = original_penguins[col].value_counts(normalize=True)
             synthetic[col] = np.random.choice(probs.index, size=num_penguins, p=probs.values)
         else:
-
             data = original_penguins[col].values.astype(float)
             if np.var(data) < 1e-12:
                 data += 1e-8 * np.random.randn(*data.shape)

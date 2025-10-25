@@ -3,6 +3,7 @@ from mst_clustering import MSTClustering
 import numpy as np
 from typing import List, Tuple
 
+
 def run_mst_clustering(data: pd.DataFrame, cutoff: int, approximate=False):
     model = MSTClustering(
         cutoff=cutoff,
@@ -13,6 +14,7 @@ def run_mst_clustering(data: pd.DataFrame, cutoff: int, approximate=False):
     labels = model.fit_predict(data.values)
 
     return labels
+
 
 def run_mst_clustering_heuristic(
     data: pd.DataFrame,
