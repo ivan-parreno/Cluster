@@ -16,11 +16,14 @@ def get_aligned_confusion_matrix(df: pd.DataFrame, true_column: str, predicted_c
 
 def align_with_species(df: pd.DataFrame, columns: list[str]) -> None:
     for column in columns:
-        cm = confusion_matrix(df["species"].cat.codes, df[column])
-        row_ind, col_ind = linear_sum_assignment(-cm)
-        assert list(row_ind) == [0, 1, 2]
-        indexer = list(col_ind).index
-        df[column] = df[column].map(indexer)
+        valid_mask = df[column] != -1
+        true = df.loc[valid_mask, "species"].cat.codes
+        pred = df.loc[valid_mask, column]
+        cm = confusion_matrix(true, pred)
+        row_ind, col_ind = linear_sum_assignment(-cm)  
+        mapping = {old: new for old, new in zip(col_ind, row_ind)}
+
+        df[column] = df[column].map(lambda x: mapping.get(x, -1))
 
 
 def show_confusion_matrix(cm: pd.DataFrame, title: str, ax: plt.Axes | None = None) -> None:
@@ -107,8 +110,11 @@ def _penguin_generator_species(original_penguins: pd.DataFrame, num_penguins: in
             probs = original_penguins[col].value_counts(normalize=True)
             synthetic[col] = np.random.choice(probs.index, size=num_penguins, p=probs.values)
         else:
-            # Fit KDE to continuous numeric data
-            data = original_penguins[col].values
+
+            data = original_penguins[col].values.astype(float)
+            if np.var(data) < 1e-12:
+                data += 1e-8 * np.random.randn(*data.shape)
+
             kde = gaussian_kde(data)
             synthetic[col] = kde.resample(num_penguins).flatten()
     return synthetic
