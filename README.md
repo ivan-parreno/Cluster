@@ -38,4 +38,11 @@ Assignments:
 
 ## Optimization in Data Science (ODS - 25/26 Q1)
 
+Assignments:
+
+- Clustering:
+    - Code: [`ods/clustering/`](./ods/clustering/)
+    - Main: [`ods/clustering/clustering.ipynb`](./ods/clustering/clustering.ipynb)
+    - Deliverable: [`ods/deliverables/ODS - Clustering.pdf`](./ods/deliverables/ODS%20-%20Clustering.pdf)
+
 ## Models and Methods of Operations Research (MMIO - 25/26 Q1)
